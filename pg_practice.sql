@@ -16,3 +16,10 @@ COMMENT ON COLUMN users.age IS '年齢';
 COMMENT ON COLUMN users.gender IS '性別';
 
 -- 問題3. postgresqlでpracticeデータベースのjobsテーブルを生成するSQL文を記述してください。
+CREATE TABLE jobs (
+  id SERIAL PRIMARY KEY ,
+  user_id int NOT NULL REFERENCES users(id),
+  name VARCHAR(255) NOT NULL DEFAULT '会社員'
+);
+
+COMMENT ON COLUMN jobs.name IS '仕事名';
