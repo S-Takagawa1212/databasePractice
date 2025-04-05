@@ -11,8 +11,8 @@ CREATE TABLE users (
   gender gender DEFAULT 'Other'
 );
 
-COMMENT ON COLUMN user.name IS '氏名';
-COMMENT ON COLUMN user.age IS '年齢';
-COMMENT ON COLUMN user.gender IS '性別';
+COMMENT ON COLUMN users.name IS '氏名';
+COMMENT ON COLUMN users.age IS '年齢';
+COMMENT ON COLUMN users.gender IS '性別';
 
 -- 問題3. postgresqlでpracticeデータベースのjobsテーブルを生成するSQL文を記述してください。
