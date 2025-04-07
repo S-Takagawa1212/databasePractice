@@ -167,11 +167,10 @@
 -- 問23
 -- アジア大陸の中で最小の表面積を表示してください
 
-SELECT
-FROM
-WHERE
-  OR
-ORDER BY
+  SELECT MIN(surface_area) AS "アジアの最小表面積"
+  FROM countries
+  WHERE continent = 'Asia'
+  GROUP BY continent ;
 
 -- 問24
 -- アジア大陸の表面積の合計を表示してください。
