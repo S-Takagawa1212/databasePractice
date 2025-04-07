@@ -58,6 +58,13 @@ WHERE name LIKE '%ia';
 
 -- 問10
 -- 名前の中に「st」が含まれる国を抽出してください。
+-- ILIKEはpostgreSQL限定で大文字小文字区別なしで比較可能
+SELECT code, name, continent, region, surface_area
+FROM countries
+WHERE name ILIKE '%st%';
+
+-- 問11
+-- 名前が「an」で始まる国を抽出してください。
 SELECT
 FROM
 WHERE
@@ -65,30 +72,51 @@ ORDER BY
 GROUP BY
 LIMIT
 
--- 問11
--- 名前が「an」で始まる国を抽出してください。
-
-
 -- 問12
 -- 全国の中から独立記念日が1990年より前または人口が10万人より多い国を全て抽出してください。
-
+SELECT
+FROM
+WHERE
+ORDER BY
+GROUP BY
+LIMIT
 
 -- 問13
 -- コードがDZAもしくはALBかつ独立記念日が1990年より前の国を全て抽出してください。
-
+SELECT
+FROM
+WHERE
+ORDER BY
+GROUP BY
+LIMIT
 
 -- 問14
 -- 全ての地方をグループ化せずに表示してください。
-
+SELECT
+FROM
+WHERE
+ORDER BY
+GROUP BY
+LIMIT
 
 -- 問15
 -- 国名と人口を以下のように表示させてください。シングルクォートに注意してください。
 -- 「Arubaの人口は103000人です」
-
+SELECT
+FROM
+WHERE
+ORDER BY
+GROUP BY
+LIMIT
 
 -- 問16
 -- 平均寿命が短い順に国名を表示させてください。ただしNULLは表示させないでください。
-
+SELECT
+FROM
+WHERE
+ORDER BY
+GROUP BY
+LIMIT
 
 -- 問17
 -- 平均寿命が長い順に国名を表示させてください。ただしNULLは表示させないでください。
