@@ -6,30 +6,35 @@ FROM countries;
 
 -- 問2
 -- ヨーロッパに属する国をすべて抽出してください。
+
 SELECT code, name, continent, region, surface_area
 FROM countries
 WHERE continent = 'Europe';
 
 -- 問3
 -- ヨーロッパ以外に属する国をすべて抽出してください。
+
 SELECT code, name, continent, region, surface_area
 FROM countries
 WHERE continent != 'Europe';
 
 -- 問4
 -- 人口が10万人以上の国をすべて抽出してください。
+
 SELECT code, name, continent, region, surface_area, indep_year, population
 FROM countries
 WHERE population >= 100000;
 
 -- 問5
 -- 平均寿命が56歳から76歳の国をすべて抽出してください。
+
 SELECT code, name, continent, region, surface_area
 FROM countries
 WHERE life_expectancy BETWEEN 56 AND 76;
 
 -- 問6
 -- 国コードがNLB,ALB,DZAのもの市区町村をすべて抽出してください。
+
 SELECT cities.id, cities.name, countries.code, cities.district, countries.population
 FROM cities
   LEFT OUTER JOIN countries
@@ -40,18 +45,21 @@ WHERE cities.country_code = 'NLB'
 
 -- 問7
 -- 独立独立記念日がない国をすべて抽出してください。
+
 SELECT code, name, continent, region, surface_area, indep_year
 FROM countries
 WHERE indep_year IS NULL;
 
 -- 問8
 -- 独立独立記念日がある国をすべて抽出してください。
+
 SELECT code, name, continent, region, surface_area, indep_year
 FROM countries
 WHERE indep_year IS NOT NULL;
 
 -- 問9
 -- 名前の末尾が「ia」で終わる国を抽出してください。
+
 SELECT code, name, continent, region, surface_area
 FROM countries
 WHERE name LIKE '%ia';
@@ -59,15 +67,18 @@ WHERE name LIKE '%ia';
 -- 問10
 -- 名前の中に「st」が含まれる国を抽出してください。
 -- ILIKEはpostgreSQL限定で大文字小文字区別なしで比較可能
+
 SELECT code, name, continent, region, surface_area
 FROM countries
 WHERE name ILIKE '%st%';
 
 -- 問11
 -- 名前が「an」で始まる国を抽出してください。
+
 SELECT code, name, continent, region, surface_area, indep_year
 FROM countries
 WHERE name ILIKE 'an%';
+
 -- 問12
 -- 全国の中から独立記念日が1990年より前または人口が10万人より多い国を全て抽出してください。
 SELECT code, name, continent, region, surface_area, indep_year,population
@@ -77,6 +88,7 @@ WHERE indep_year < 1990
 
 -- 問13
 -- コードがDZAもしくはALBかつ独立記念日が1990年より前の国を全て抽出してください。
+
 SELECT code, name, continent, region, surface_area, indep_year,population
 FROM countries
 WHERE code IN ('DZA', 'ALB')
@@ -84,6 +96,7 @@ WHERE code IN ('DZA', 'ALB')
 
 -- 問14
 -- 全ての地方をグループ化せずに表示してください。
+
 SELECT DISTINCT region
 FROM countries
 ORDER BY region;
@@ -92,6 +105,7 @@ ORDER BY region;
 -- 問15
 -- 国名と人口を以下のように表示させてください。シングルクォートに注意してください。
 -- 「Arubaの人口は103000人です」
+
 SELECT name || 'の人口は' || population || '人です。'
 FROM countries ;
 
@@ -114,6 +128,11 @@ ORDER BY life_expectancy desc;
 -- 問18
 -- 平均寿命が長い順、独立記念日が新しい順に国を表示させてください。
 
+SELECT name, life_expectancy, indep_year
+FROM countries
+WHERE life_expectancy IS NOT NULL
+  OR indep_year IS NOT NULL
+ORDER BY life_expectancy desc, indep_year desc;
 
 -- 問19
 -- 全ての国の国コードの一文字目と国名を表示させてください。
