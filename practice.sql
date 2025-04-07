@@ -106,7 +106,10 @@ ORDER BY life_expectancy ;
 
 -- 問17
 -- 平均寿命が長い順に国名を表示させてください。ただしNULLは表示させないでください。
-
+SELECT name, life_expectancy
+FROM countries
+WHERE life_expectancy IS  NOT NULL
+ORDER BY life_expectancy desc;
 
 -- 問18
 -- 平均寿命が長い順、独立記念日が新しい順に国を表示させてください。
