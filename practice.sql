@@ -6,48 +6,73 @@ FROM countries;
 
 -- 問2
 -- ヨーロッパに属する国をすべて抽出してください。
-SELECT name
+SELECT code, name, continent, region, surface_area
 FROM countries
-WHERE continent == Europe;
+WHERE continent = 'Europe';
 
 -- 問3
 -- ヨーロッパ以外に属する国をすべて抽出してください。
-SELECT name
+SELECT code, name, continent, region, surface_area
 FROM countries
-WHERE continent != Europe;
+WHERE continent != 'Europe';
 
 -- 問4
 -- 人口が10万人以上の国をすべて抽出してください。
-SELECT name
+SELECT code, name, continent, region, surface_area, indep_year, population
 FROM countries
 WHERE population >= 100000;
 
 -- 問5
 -- 平均寿命が56歳から76歳の国をすべて抽出してください。
-SELECT name
+SELECT code, name, continent, region, surface_area
 FROM countries
 WHERE life_expectancy BETWEEN 56 AND 76;
 
-
 -- 問6
 -- 国コードがNLB,ALB,DZAのもの市区町村をすべて抽出してください。
-
+SELECT cities.id, cities.name, countries.code, cities.district, countries.population
+FROM cities
+  LEFT OUTER JOIN countries
+    ON cities.country_code = countries.code
+WHERE cities.country_code = 'NLB'
+  OR  cities.country_code = 'ALB'
+  OR  cities.country_code = 'DZA';
 
 -- 問7
 -- 独立独立記念日がない国をすべて抽出してください。
-
+SELECT
+FROM
+WHERE
+ORDER BY
+GROUP BY
+LIMIT
 
 -- 問8
 -- 独立独立記念日がある国をすべて抽出してください。
-
+SELECT
+FROM
+WHERE
+ORDER BY
+GROUP BY
+LIMIT
 
 -- 問9
 -- 名前の末尾が「ia」で終わる国を抽出してください。
-
+SELECT
+FROM
+WHERE
+ORDER BY
+GROUP BY
+LIMIT
 
 -- 問10
 -- 名前の中に「st」が含まれる国を抽出してください。
-
+SELECT
+FROM
+WHERE
+ORDER BY
+GROUP BY
+LIMIT
 
 -- 問11
 -- 名前が「an」で始まる国を抽出してください。
