@@ -151,11 +151,10 @@ ORDER BY name_length desc;
 -- 問21
 -- 全ての地方の平均寿命、平均人口を表示してください。(NULLも表示)
 
-SELECT
-FROM
-WHERE
-  OR
-ORDER BY
+SELECT region, AVG(life_expectancy) AS "平均寿命", AVG(population) AS "平均人口"
+FROM countries
+GROUP BY region
+ORDER BY region ;
 
 -- 問22
 -- 全ての地方の最長寿命、最大人口を表示してください。(NULLも表示)
