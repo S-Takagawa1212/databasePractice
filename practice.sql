@@ -175,11 +175,12 @@
 -- 問24
 -- アジア大陸の表面積の合計を表示してください。
 
-SELECT
-FROM
-WHERE
-  OR
-ORDER BY
+
+  SELECT SUM(surface_area) AS "アジアの最小表面積"
+  FROM countries
+  WHERE continent = 'Asia'
+  GROUP BY continent ;
+
 -- 問25
 -- 全ての国と言語を表示してください。一つの国に複数言語があると思いますので同じ国名を言語数だけ出力してください。
 
