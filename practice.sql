@@ -84,12 +84,10 @@ WHERE code IN ('DZA', 'ALB')
 
 -- 問14
 -- 全ての地方をグループ化せずに表示してください。
-SELECT
-FROM
-WHERE
-ORDER BY
-GROUP BY
-LIMIT
+SELECT DISTINCT region
+FROM countries
+ORDER BY region;
+
 
 -- 問15
 -- 国名と人口を以下のように表示させてください。シングルクォートに注意してください。
