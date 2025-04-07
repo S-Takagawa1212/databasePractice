@@ -98,12 +98,11 @@ FROM countries ;
 
 -- 問16
 -- 平均寿命が短い順に国名を表示させてください。ただしNULLは表示させないでください。
-SELECT
-FROM
-WHERE
-ORDER BY
-GROUP BY
-LIMIT
+SELECT name, life_expectancy
+FROM countries
+WHERE life_expectancy IS  NOT NULL
+ORDER BY life_expectancy ;
+
 
 -- 問17
 -- 平均寿命が長い順に国名を表示させてください。ただしNULLは表示させないでください。
