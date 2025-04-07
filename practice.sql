@@ -144,11 +144,8 @@ FROM countries ;
 -- 問20
 -- 国名が長いものから順に国名と国名の長さを出力してください。
 
-SELECT name, name_length
-FROM(
-  SELECT name, LENGTH(name) AS name_length
-  FROM countries
-)
+SELECT name, LENGTH(name) AS name_length
+FROM countries
 ORDER BY name_length desc;
 
 -- 問21
