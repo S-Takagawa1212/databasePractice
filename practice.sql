@@ -52,12 +52,9 @@ WHERE indep_year IS NOT NULL;
 
 -- 問9
 -- 名前の末尾が「ia」で終わる国を抽出してください。
-SELECT
-FROM
-WHERE
-ORDER BY
-GROUP BY
-LIMIT
+SELECT code, name, continent, region, surface_area
+FROM countries
+WHERE name LIKE '%ia';
 
 -- 問10
 -- 名前の中に「st」が含まれる国を抽出してください。
