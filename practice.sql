@@ -184,35 +184,70 @@
 -- 問25
 -- 全ての国と言語を表示してください。一つの国に複数言語があると思いますので同じ国名を言語数だけ出力してください。
 
+SELECT c.name, cl.language
+FROM countries AS c
+  JOIN country_languages AS cl
+  ON c.code = cl.country_code ;
+
+-- 問26
+-- 全ての国と言語と市区町村を表示してください。
+
 SELECT
 FROM
 WHERE
   OR
 ORDER BY
 
--- 問26
--- 全ての国と言語と市区町村を表示してください。
-
-
 -- 問27
 -- 全ての有名人を出力してください。左側外部結合を使用して国名なし（country_codeがNULL）も表示してください。
 
+SELECT
+FROM
+WHERE
+  OR
+ORDER BY
 
 -- 問28
 -- 全ての有名人の名前,国名、第一言語を出力してください。
 
+SELECT
+FROM
+WHERE
+  OR
+ORDER BY
 
 -- 問29
 -- 全ての有名人の名前と国名をに出力してください。 ただしテーブル結合せずサブクエリを使用してください。
 
+SELECT
+FROM
+WHERE
+  OR
+ORDER BY
 
 -- 問30
 -- 最年長が50歳以上かつ最年少が30歳以下の国を表示させてください。
 
+SELECT
+FROM
+WHERE
+  OR
+ORDER BY
 
 -- 問31
 -- 1991年生まれと、1981年生まれの有名人が何人いるか調べてください。ただし、日付関数は使用せず、UNION句を使用してください。
 
+SELECT
+FROM
+WHERE
+  OR
+ORDER BY
 
 -- 問32
 -- 有名人の出身国の平均年齢を高い方から順に表示してください。ただし、FROM句はcountriesテーブルとしてください。
+
+SELECT
+FROM
+WHERE
+  OR
+ORDER BY
