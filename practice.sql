@@ -65,21 +65,15 @@ WHERE name ILIKE '%st%';
 
 -- 問11
 -- 名前が「an」で始まる国を抽出してください。
-SELECT
-FROM
-WHERE
-ORDER BY
-GROUP BY
-LIMIT
-
+SELECT code, name, continent, region, surface_area, indep_year
+FROM countries
+WHERE name ILIKE 'an%';
 -- 問12
 -- 全国の中から独立記念日が1990年より前または人口が10万人より多い国を全て抽出してください。
-SELECT
-FROM
-WHERE
-ORDER BY
-GROUP BY
-LIMIT
+SELECT code, name, continent, region, surface_area, indep_year,population
+FROM countries
+WHERE indep_year < 1990
+  OR population > 100000;
 
 -- 問13
 -- コードがDZAもしくはALBかつ独立記念日が1990年より前の国を全て抽出してください。
