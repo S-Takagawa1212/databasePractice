@@ -33,7 +33,7 @@ WHERE life_expectancy BETWEEN 56 AND 76;
 SELECT cities.id, cities.name, countries.code, cities.district, countries.population
 FROM cities
   LEFT OUTER JOIN countries
-    ON cities.country_code = countries.code
+    ON cities._code = countries.code
 WHERE cities.country_code = 'NLB'
   OR  cities.country_code = 'ALB'
   OR  cities.country_code = 'DZA';
@@ -77,12 +77,10 @@ WHERE indep_year < 1990
 
 -- 問13
 -- コードがDZAもしくはALBかつ独立記念日が1990年より前の国を全て抽出してください。
-SELECT
-FROM
-WHERE
-ORDER BY
-GROUP BY
-LIMIT
+SELECT code, name, continent, region, surface_area, indep_year,population
+FROM countries
+WHERE code IN ('DZA', 'ALB')
+  AND indep_year < 1990;
 
 -- 問14
 -- 全ての地方をグループ化せずに表示してください。
