@@ -40,12 +40,9 @@ WHERE cities.country_code = 'NLB'
 
 -- 問7
 -- 独立独立記念日がない国をすべて抽出してください。
-SELECT
-FROM
-WHERE
-ORDER BY
-GROUP BY
-LIMIT
+SELECT code, name, continent, region, surface_area, indep_year
+FROM countries
+WHERE indep_year IS NULL;
 
 -- 問8
 -- 独立独立記念日がある国をすべて抽出してください。
