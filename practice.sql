@@ -192,11 +192,12 @@ FROM countries AS c
 -- 問26
 -- 全ての国と言語と市区町村を表示してください。
 
-SELECT
-FROM
-WHERE
-  OR
-ORDER BY
+SELECT countries.name, cities.name AS "市区町村名", country_languages.language
+FROM countries
+  JOIN cities
+  ON countries.code = cities.country_code
+  JOIN country_languages
+  ON countries.code = country_languages.country_code ;
 
 -- 問27
 -- 全ての有名人を出力してください。左側外部結合を使用して国名なし（country_codeがNULL）も表示してください。
