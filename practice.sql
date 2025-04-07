@@ -137,29 +137,62 @@ ORDER BY life_expectancy desc, indep_year desc;
 -- 問19
 -- 全ての国の国コードの一文字目と国名を表示させてください。
 
+SELECT left(code, 1) AS first_char, name
+FROM countries ;
+
 
 -- 問20
 -- 国名が長いものから順に国名と国名の長さを出力してください。
 
+SELECT
+FROM
+WHERE
+  OR
+ORDER BY
 
 -- 問21
 -- 全ての地方の平均寿命、平均人口を表示してください。(NULLも表示)
 
+SELECT
+FROM
+WHERE
+  OR
+ORDER BY
 
 -- 問22
 -- 全ての地方の最長寿命、最大人口を表示してください。(NULLも表示)
 
+SELECT
+FROM
+WHERE
+  OR
+ORDER BY
 
 -- 問23
 -- アジア大陸の中で最小の表面積を表示してください
 
+SELECT
+FROM
+WHERE
+  OR
+ORDER BY
 
 -- 問24
 -- アジア大陸の表面積の合計を表示してください。
 
+SELECT
+FROM
+WHERE
+  OR
+ORDER BY
 -- 問25
 -- 全ての国と言語を表示してください。一つの国に複数言語があると思いますので同じ国名を言語数だけ出力してください。
 
+SELECT
+FROM
+WHERE
+  OR
+ORDER BY
 
 -- 問26
 -- 全ての国と言語と市区町村を表示してください。
