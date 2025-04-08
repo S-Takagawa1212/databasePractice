@@ -237,12 +237,18 @@ FROM celebrities;
 
 -- 問30
 -- 最年長が50歳以上かつ最年少が30歳以下の国を表示させてください。
+WITH ages AS (
+  SELECT country_code, max(celeb.age) AS max_age, min(celeb.age) AS min_age
+  FROM celebrities AS celeb
+  GROUP BY country_code
+)
 
-SELECT
-FROM
-WHERE
-  OR
-ORDER BY
+SELECT ages.country_code, ages.max_age, ages.min_age
+FROM countries AS c
+  JOIN ages
+  ON c.code = ages.country_code
+WHERE max_age >= 50
+  AND min_age <= 30;
 
 -- 問31
 -- 1991年生まれと、1981年生まれの有名人が何人いるか調べてください。ただし、日付関数は使用せず、UNION句を使用してください。
