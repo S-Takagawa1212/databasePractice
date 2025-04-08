@@ -227,11 +227,13 @@ LIMIT 15;
 -- 問29
 -- 全ての有名人の名前と国名をに出力してください。 ただしテーブル結合せずサブクエリを使用してください。
 
-SELECT
-FROM
-WHERE
-  OR
-ORDER BY
+SELECT celebrities.name,
+  (
+    SELECT countries.name
+    FROM countries
+    WHERE celebrities.country_code = countries.code
+  )
+FROM celebrities;
 
 -- 問30
 -- 最年長が50歳以上かつ最年少が30歳以下の国を表示させてください。
