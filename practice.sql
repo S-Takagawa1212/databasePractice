@@ -267,8 +267,9 @@ GROUP BY birth_year;
 -- 問32
 -- 有名人の出身国の平均年齢を高い方から順に表示してください。ただし、FROM句はcountriesテーブルとしてください。
 
-SELECT
-FROM
-WHERE
-  OR
-ORDER BY
+SELECT c.name AS 国名, AVG(age) AS 平均年齢
+FROM countries AS c
+  JOIN celebrities AS celeb
+  ON c.code = celeb.country_code
+GROUP BY c.name
+ORDER BY 平均年齢 desc
