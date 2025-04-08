@@ -202,20 +202,27 @@ FROM countries
 -- 問27
 -- 全ての有名人を出力してください。左側外部結合を使用して国名なし（country_codeがNULL）も表示してください。
 
-SELECT
-FROM
-WHERE
-  OR
-ORDER BY
+SELECT celebrities.name AS celebritiesName, countries.name AS countryName
+FROM celebrities
+  LEFT OUTER JOIN countries
+  ON celebrities.country_code = countries.code ;
 
 -- 問28
 -- 全ての有名人の名前,国名、第一言語を出力してください。
 
-SELECT
-FROM
-WHERE
-  OR
-ORDER BY
+SELECT cel.name AS celebrity, c.name AS country, lang.language, lang.percentage
+FROM countries AS c
+  JOIN celebrities AS cel ON c.code = cel.country_code
+  JOIN country_languages AS lang ON c.code = lang.country_code
+  JOIN (
+    SELECT country_code, MAX(percentage) AS max_percentage
+    FROM country_languages
+    GROUP BY country_code
+  ) AS max_lang
+  ON lang.country_code = max_lang.country_code
+     AND lang.percentage = max_lang.max_percentage
+LIMIT 15;
+
 
 -- 問29
 -- 全ての有名人の名前と国名をに出力してください。 ただしテーブル結合せずサブクエリを使用してください。
