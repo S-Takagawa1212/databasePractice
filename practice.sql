@@ -253,11 +253,16 @@ WHERE max_age >= 50
 -- 問31
 -- 1991年生まれと、1981年生まれの有名人が何人いるか調べてください。ただし、日付関数は使用せず、UNION句を使用してください。
 
-SELECT
-FROM
-WHERE
-  OR
-ORDER BY
+SELECT TO_CHAR(birth, 'YYYY') AS birth_year , COUNT(*)
+FROM celebrities
+WHERE TO_CHAR(birth, 'YYYY') = '1991'
+GROUP BY birth_year
+UNION
+SELECT TO_CHAR(birth, 'YYYY') AS birth_year , COUNT(*)
+FROM celebrities
+WHERE TO_CHAR(birth, 'YYYY') = '1981'
+GROUP BY birth_year;
+
 
 -- 問32
 -- 有名人の出身国の平均年齢を高い方から順に表示してください。ただし、FROM句はcountriesテーブルとしてください。
