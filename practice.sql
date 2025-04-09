@@ -220,8 +220,7 @@ FROM countries AS c
     GROUP BY country_code
   ) AS max_lang
   ON lang.country_code = max_lang.country_code
-     AND lang.percentage = max_lang.max_percentage
-LIMIT 15;
+     AND lang.percentage = max_lang.max_percentage;
 
 
 -- 問29
