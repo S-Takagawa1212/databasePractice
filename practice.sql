@@ -240,13 +240,12 @@ FROM celebrities;
 WITH ages AS (
   SELECT country_code, max(celeb.age) AS max_age, min(celeb.age) AS min_age
   FROM celebrities AS celeb
+  WHERE country_code IS NOT NULL
   GROUP BY country_code
 )
 
 SELECT ages.country_code, ages.max_age, ages.min_age
-FROM countries AS c
-  JOIN ages
-  ON c.code = ages.country_code
+FROM ages
 WHERE max_age >= 50
   AND min_age <= 30;
 
