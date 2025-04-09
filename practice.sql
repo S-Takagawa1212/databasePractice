@@ -240,7 +240,7 @@ FROM celebrities;
 WITH ages AS (
   SELECT country_code, max(celeb.age) AS max_age, min(celeb.age) AS min_age
   FROM celebrities AS celeb
-  WHERE country_code IS NOT NULL
+  WHERE country_code != ''
   GROUP BY country_code
 )
 
